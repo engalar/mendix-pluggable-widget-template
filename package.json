@@ -1,0 +1,49 @@
+{
+  "name": "graph",
+  "widgetName": "Graph",
+  "version": "1.0.0",
+  "description": "My widget description",
+  "packagePath": "mendixcn",
+  "author": "wengao.liu@siemens.com",
+  "dependencies": {
+    "ahooks": "^2.10.14",
+    "classnames": "^2.2.6"
+  },
+  "scripts": {
+    "m": "npm install -g cnpm rollup prettier eslint --registry=https://registry.npmmirror.com",
+    "x": "npm i --registry=https://registry.npmmirror.com",
+    "testProject": "cmd /c git clone https://gitee.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject && rd /s /q  .\\tests\\testProject\\.git",
+    "r": "node ./script/rename.js",
+    "u": "node ./script/update.js",
+    "start": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web",
+    "openTestProject": "start tests/testProject/testProject.mpr",
+    "backupTestProject": "cmd /c (if not exist dummy\\deployment\\data\\database\\hsqldb\\default (mkdir dummy\\deployment\\data\\database\\hsqldb\\default) else (echo skip 1)) && (if not exist dummy\\widgets (mkdir dummy\\widgets) else (echo skip 2)) && copy tests\\testProject\\testProject.mpr dummy\\ /Y && copy tests\\testProject\\deployment\\data\\database\\hsqldb\\default\\default.script dummy\\deployment\\data\\database\\hsqldb\\default\\",
+    "postbackupTestProject": "cmd /c copy tests\\testProject\\widgets\\mendixcn.Graph.mpk dummy\\widgets\\",
+    "restoreTestProject": "cmd /c xcopy dummy tests\\testProject /E /Y"
+  },
+  "copyright": "2020 Mendix Technology BV",
+  "engines": {
+    "node": ">=12"
+  },
+  "config": {
+    "projectPath": "./tests/testProject/",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^9.0.0",
+    "@types/big.js": "^6.0.2",
+    "@types/classnames": "^2.2.4",
+    "@types/lodash-es": "^4.17.5",
+    "@types/react": "~17.0.1",
+    "@types/react-dom": "~17.0.1",
+    "xml2js": "^0.4.23",
+    "zlib": "^1.0.5"
+  }
+}
