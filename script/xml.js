@@ -42,8 +42,19 @@ function readXml(path, cb) {
     });
   });
 }
+function replaceFile(path, fromStr, toStr) {
+  fs.readFile(path, "utf-8", function (err, data) {
+    if (err) console.log(err);
+    // we then pass the data to our method here
 
+    fs.writeFile(path, data.replace(fromStr, toStr), function (err, data) {
+      if (err) console.log(err);
+      console.log(`successfully replace ${fromStr} to ${toStr} in file ${path}`);
+    });
+  });
+}
 module.exports = {
   readXml,
-  updateXml
+  updateXml,
+  replaceFile
 }
