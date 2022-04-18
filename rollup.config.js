@@ -13,6 +13,7 @@ export default args => {
       if (warning.code === 'NAMESPACE_CONFLICT') return;
 
       if (warning.code === 'CIRCULAR_DEPENDENCY') return;
+      if (warning.code === 'EVAL') return;
 
       onwarn(warning);
     };
