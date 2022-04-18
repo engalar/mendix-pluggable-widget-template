@@ -1,1 +1,4 @@
 
+[submodule "src/piw-utils-internal"]
+	path = src/piw-utils-internal
+	url = https://gitee.com/engalar/piw-utils-internal.git

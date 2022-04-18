@@ -1,7 +1,7 @@
 {
   "name": "graph",
   "widgetName": "Graph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My widget description",
   "packagePath": "mendixcn",
   "author": "wengao.liu@siemens.com",
