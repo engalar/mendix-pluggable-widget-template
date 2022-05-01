@@ -10,8 +10,7 @@
     "classnames": "^2.2.6"
   },
   "scripts": {
-    "m": "npm install -g cnpm rollup prettier eslint --registry=https://registry.npmmirror.com",
-    "x": "npm i --registry=https://registry.npmmirror.com",
+    "m": "npm install -g rollup prettier eslint",
     "testProject": "cmd /c git clone https://gitee.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject && rd /s /q  .\\tests\\testProject\\.git",
     "r": "node ./script/rename.js",
     "start": "pluggable-widgets-tools start:web",
@@ -36,7 +35,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^9.0.0",
+    "@mendix/pluggable-widgets-tools": "^9.11.1",
     "@types/big.js": "^6.0.2",
     "@types/classnames": "^2.2.4",
     "@types/lodash-es": "^4.17.5",
