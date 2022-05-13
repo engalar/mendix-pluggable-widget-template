@@ -42,7 +42,7 @@ jobs:
             - name: "Zip testProject"
               run: |
                   npm run testProject
-                  cp -r dummy/* tests/testProject/
+                  npm run restoreTestProject
                   zip -r dist/demo.zip tests/testProject/*
             - name: "Release MPK Files"
               uses: marvinpinto/action-automatic-releases@v1.2.1
