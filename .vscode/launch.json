@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Mendix Program",
+      "request": "launch",
+      "vmArgs": "-Djava.net.preferIPv4Stack=true -DMX_LOG_LEVEL=INFO \"-Djava.library.path=C:/Program Files/Mendix/9.6.0.27784/runtime/lib/x64;${workspaceFolder}/tests/testProject/deployment/model/lib/userlib\" -Dfile.encoding=UTF-8 -Djava.io.tmpdir=\"${workspaceFolder}/tests/testProject/deployment/data/tmp\"",
+      "classPaths": [
+        "C:/Program Files/Mendix/9.6.0.27784/runtime/launcher/runtimelauncher.jar"
+      ],
+      "cwd": "${workspaceFolder}/tests/testProject/deployment",
+      "mainClass": "com.mendix.container.boot.Main",
+      "env": {
+        "M2EE_ADMIN_PASS": "1",
+        "M2EE_ADMIN_PORT": 8090,
+        "M2EE_CONSOLE_PATH": "C:/Program Files/Mendix/9.6.0.27784/modeler/MendixConsoleLog.exe",
+        "MX_INSTALL_PATH": "C:/Program Files/Mendix/9.6.0.27784",
+        "MXCONSOLE_BASE_PATH": "${workspaceFolder}/tests/testProject/deployment",
+        "MXCONSOLE_RUNTIME_LISTEN_ADDRESSES": "*",
+        "MXCONSOLE_RUNTIME_PATH": "C:/Program Files/Mendix/9.6.0.27784/runtime",
+        "MXCONSOLE_RUNTIME_PORT": 8080,
+        "MXCONSOLE_SERVER_URL": "http://127.0.0.1:8090/"
+      },
+      "args": "${workspaceFolder}/tests/testProject/deployment",
+      "preLaunchTask": "${defaultBuildTask}",
+    }
+  ]
+}

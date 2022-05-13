@@ -39,6 +39,11 @@ jobs:
                   npm run m
                   npm run x
                   npm run build
+            - name: "Zip testProject"
+              run: |
+                  npm run testProject
+                  npm run restoreTestProject
+                  zip -r dist/demo.zip tests/testProject/*
             - name: "Release MPK Files"
               uses: marvinpinto/action-automatic-releases@v1.2.1
               with:
@@ -48,3 +53,4 @@ jobs:
                   title: "${{ steps.package.outputs.widgetName }}"
                   files: |
                       dist/**/*.mpk
+                      dist/demo.zip
