@@ -31,22 +31,15 @@ jobs:
             - name: Get package info
               id: package
               uses: codex-team/action-nodejs-package-info@v1
-            # - name: "Defining cache"
-            #   uses: actions/cache@v2
-            #   env:
-            #       cache-name: cache-node-modules
-            #   with:
-            #       path: ~/.npm
-            #       key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
             - name: Install Dependencies
               run: |
-                  npm run m
                   npm ci
                   npm run build
             - name: "Zip testProject"
               run: |
-                  npm run testProject
-                  npm run restoreTestProject
+                  git clone https://github.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject
+                  rm -rf tests/testProject/.git
+                  cp -r dummy/* tests/testProject/
                   zip -r dist/demo.zip tests/testProject/*
             - name: "Release MPK Files"
               uses: marvinpinto/action-automatic-releases@v1.2.1

@@ -10,8 +10,7 @@
     "classnames": "^2.2.6"
   },
   "scripts": {
-    "m": "npm install -g rollup prettier eslint",
-    "testProject": "cmd /c git clone https://gitee.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject && shx rm -rf .\\tests\\testProject\\.git",
+    "testProject": "git clone https://gitee.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject && shx rm -rf .\\tests\\testProject\\.git",
     "r": "node ./script/rename.js",
     "start": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
@@ -42,6 +41,10 @@
     "@types/react": "~17.0.1",
     "@types/react-dom": "~17.0.1",
     "shx": "^0.3.4",
+    "mime": "^2.6.0",
+    "rollup": "^2.73.0",
+    "prettier": "^2.6.2",
+    "eslint": "^8.15.0",
     "xml2js": "^0.4.23",
     "zlib": "^1.0.5"
   }
