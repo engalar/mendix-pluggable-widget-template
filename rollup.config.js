@@ -1,6 +1,8 @@
 export default args => {
   const result = args.configDefaultConfig;
-  result.forEach(config => {
+  const [jsConfig, mJsConfig] = result;
+
+  [jsConfig, mJsConfig].forEach(config => {
     const onwarn = config.onwarn;
     config.onwarn = warning => {
       if (
@@ -10,13 +12,15 @@ export default args => {
       ) {
         return;
       }
-      if (warning.code === 'NAMESPACE_CONFLICT') return;
-
-      if (warning.code === 'CIRCULAR_DEPENDENCY') return;
-      if (warning.code === 'EVAL') return;
+      if ([
+        'NAMESPACE_CONFLICT',
+        'CIRCULAR_DEPENDENCY',
+        'EVAL'
+      ].includes(warning.code)) return;
 
       onwarn(warning);
     };
   });
+
   return result;
 };
