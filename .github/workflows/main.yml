@@ -37,6 +37,8 @@ jobs:
               run: |
                   npm ci
                   npm run build
+              env:
+                  NODE_OPTIONS: --max_old_space_size=4096
             - name: "Zip testProject"
               run: |
                   git clone https://github.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject
