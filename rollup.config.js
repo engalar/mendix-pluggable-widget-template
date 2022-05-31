@@ -1,5 +1,5 @@
 import { normalize } from 'path';
-import commonjs from '@rollup/plugin-commonjs';
+// import commonjs from '@rollup/plugin-commonjs';
 
 export default args => {
   const result = args.configDefaultConfig;
