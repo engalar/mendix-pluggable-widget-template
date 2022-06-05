@@ -1,5 +1,4 @@
 import { parseStyle } from "./piw-utils-internal";
-import { createElement } from "react";
 import { GraphPreviewProps } from "../typings/GraphProps";
 
 declare function require(name: string): string;
