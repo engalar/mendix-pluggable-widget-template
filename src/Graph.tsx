@@ -1,4 +1,4 @@
-import { createElement, useMemo } from "react";
+import { useMemo } from "react";
 import { GraphContainerProps } from "../typings/GraphProps";
 import { ValueStatus } from "mendix";
 

@@ -1,17 +1,45 @@
 import { normalize } from 'path';
-// import commonjs from '@rollup/plugin-commonjs';
+import { getBabelInputPlugin } from "@rollup/plugin-babel";
+
+function replacePlugin(config, name, plugin) {
+  if (typeof name == 'string') {
+
+  }
+
+  if (typeof name == 'number') {
+    config.plugins[name] = plugin;
+  }
+
+}
 
 export default args => {
+  const production = Boolean(args.configProduction);
   const result = args.configDefaultConfig;
   const [jsConfig, mJsConfig] = result;
   [jsConfig, mJsConfig].forEach(config => {
-    // copy from mx
-    /* config.plugins[10] = commonjs({
-      extensions: ['.js', '.jsx', '.tsx', '.ts'],
-      transformMixedEsModules: true,
-      requireReturnsDefault: "auto",
-      // ignore: id => (config.external || []).some(value => new RegExp(value).test(id))
-    }); */
+    //https://zh-hans.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup
+    const newBabelPlugin = getBabelInputPlugin({
+      sourceMaps: !production,
+      babelrc: false,
+      babelHelpers: "bundled",
+      plugins: ["@babel/plugin-proposal-class-properties"],
+      overrides: [
+        {
+          test: /node_modules/,
+          plugins: ["@babel/plugin-transform-flow-strip-types", "@babel/plugin-transform-react-jsx"]
+        },
+        {
+          exclude: /node_modules/,
+          "plugins": [
+            ["@babel/plugin-transform-react-jsx", {
+              "runtime": "automatic"
+            }]
+          ]
+        }
+      ]
+    });
+
+    replacePlugin(config, 9, newBabelPlugin);
 
     const onwarn = config.onwarn;
     config.onwarn = warning => {

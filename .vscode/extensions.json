@@ -7,7 +7,10 @@
     "infeng.vscode-react-typescript",
     "redhat.vscode-xml",
     "dotjoshjohnson.xml",
-    "dsznajder.es7-react-js-snippets",
-    "fabiospampinato.vscode-open-in-application"
+    "fabiospampinato.vscode-open-in-application",
+    "rioj7.command-variable",
+    "yogendrasharma.mendix-snippets",
+    "mhutchie.git-graph",
+    "iliazeus.vscode-ansi"
   ]
 }

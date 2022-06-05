@@ -3,7 +3,9 @@
   "compilerOptions": {
     "types": [
       "@engalar/mendix-client",
-      "jest"
-    ]
+      "jest",
+    ],
+    "jsx": "react-jsx",
+    "jsxFactory": null
   }
 }
