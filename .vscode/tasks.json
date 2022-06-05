@@ -1,10 +1,39 @@
 {
 	"version": "2.0.0",
+	"inputs": [
+		{
+			"id": "envJDK_HOME",
+			"type": "command",
+			"command": "extension.commandvariable.file.content",
+			"args": {
+				"fileName": "${workspaceFolder}/demo.env",
+				"key": "JDK_HOME",
+				"default": "default-plugin"
+			}
+		},
+		{
+			"id": "envMX_INSTALL_PATH",
+			"type": "command",
+			"command": "extension.commandvariable.file.content",
+			"args": {
+				"fileName": "${workspaceFolder}/demo.env",
+				"key": "MX_INSTALL_PATH",
+				"default": "default-plugin"
+			}
+		}
+	],
 	"tasks": [
 		{
 			"label": "build_mx",
 			"type": "shell",
-			"command": "C:/\"Program Files\"/Mendix/9.6.0.27784/modeler/mxbuild.exe --java-home=\"%JAVA_HOME%\" --java-exe-path=\"%JAVA_HOME%/bin/java.exe\" --target=deploy --loose-version-check \"${workspaceFolder}/tests/testProject/testProject.mpr\"",
+			"command": "${input:envMX_INSTALL_PATH}/modeler/mxbuild.exe",
+				"args": [
+					"--java-home=${input:envJDK_HOME}",
+					"--java-exe-path=${input:envJDK_HOME}/bin/java.exe",
+					"--target=deploy",
+					"--loose-version-check",
+					"${workspaceFolder}/tests/testProject/testProject.mpr",
+				],
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
