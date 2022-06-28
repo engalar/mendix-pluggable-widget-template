@@ -29,14 +29,18 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
-                  cache: 'npm'
+                  cache: "npm"
             - name: Get package info
               id: package
               uses: codex-team/action-nodejs-package-info@v1
             - name: Install Dependencies
               run: |
                   npm ci
-                  npm run build
+              env:
+                  NODE_OPTIONS: --max_old_space_size=4096
+            - name: npm run release
+              run: |
+                  npm run release
               env:
                   NODE_OPTIONS: --max_old_space_size=4096
             - name: "Zip testProject"
