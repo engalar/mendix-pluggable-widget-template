@@ -72,7 +72,7 @@ readXml("./src/package.xml", json => {
     json.widget.description[0] = packageConfig.description;
   });
 
-  replaceFile(`./src/${packageConfig.widgetName}.tsx`, /Graph/g, packageConfig.widgetName);
+  replaceFile(`./src/${packageConfig.widgetName}.tsx`, /DataGridTextFilter/g, packageConfig.widgetName);
 
   console.log('update: done');
   //#endregion
