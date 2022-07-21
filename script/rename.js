@@ -3,6 +3,9 @@ var { readXml, updateXml, replaceFile } = require('./xml');
 var fs = require('fs');
 
 console.log('rename: start');
+
+replaceFile(`package.json`, /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
+
 readXml("./src/package.xml", json => {
   var oldWidgetName = json.package.clientModule[0].$.name;
 
@@ -50,6 +53,8 @@ readXml("./src/package.xml", json => {
       fs.writeFileSync(`./src/${packageConfig.widgetName}.editorConfig.ts`, result, { encoding: 'utf8' });
     })();
     //#endregion
+
+    replaceFile(`../package.json`, /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
 
     console.log('rename: done');
     //#endregion
