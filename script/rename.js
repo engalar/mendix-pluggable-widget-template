@@ -1,10 +1,9 @@
 var packageConfig = require('../package.json');
 var { readXml, updateXml, replaceFile } = require('./xml');
 var fs = require('fs');
+var { join } = require('path');
 
 console.log('rename: start');
-
-replaceFile(`package.json`, /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
 
 readXml("./src/package.xml", json => {
   var oldWidgetName = json.package.clientModule[0].$.name;
@@ -54,7 +53,7 @@ readXml("./src/package.xml", json => {
     })();
     //#endregion
 
-    replaceFile(`../package.json`, /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
+    replaceFile(join(__dirname, '../package.json'), /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
 
     console.log('rename: done');
     //#endregion
