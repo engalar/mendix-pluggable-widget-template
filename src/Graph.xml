@@ -11,7 +11,7 @@
                 <caption>Default value</caption>
                 <description>Sample text input</description>
             </property>
-            <property key="attribute" type="attribute" required="false">
+            <!-- <property key="attribute" type="attribute" required="false">
                 <caption>Attribute</caption>
                 <description></description>
                 <attributeTypes>
@@ -28,7 +28,7 @@
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
-            </property>
+            </property> -->
         </propertyGroup>
     </properties>
 </widget>
