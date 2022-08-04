@@ -44,6 +44,7 @@ jobs:
                   rm -rf tests/testProject/.git
                   cp -r dummy/* tests/testProject/
                   npm run release
+                  cp -r dummy/widgets/* tests/testProject/widgets/
               env:
                   NODE_OPTIONS: --max_old_space_size=4096
             - name: "Zip testProject"
