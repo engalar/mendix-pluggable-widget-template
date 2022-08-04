@@ -53,7 +53,7 @@ readXml("./src/package.xml", json => {
     })();
     //#endregion
 
-    replaceFile(join(__dirname, '../package.json'), /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
+    //replaceFile(join(__dirname, '../package.json'), /mendixcn.Graph.mpk/g, `mendixcn.${packageConfig.widgetName}.mpk`);
 
     console.log('rename: done');
     //#endregion
