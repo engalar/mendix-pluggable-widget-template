@@ -8,7 +8,7 @@ describe("Position Observer", () => {
         let hookValue = { top: 0, right: 0, bottom: 0, left: 0 };
         const setHookValue = jest.fn(value => (hookValue = value));
 
-        // @ts-ignore
+        // @ts-ignore: next-line
         jest.spyOn(target, "getBoundingClientRect").mockImplementation(() => ({
             top: 1,
             right: 2,
