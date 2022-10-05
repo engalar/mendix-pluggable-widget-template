@@ -2,10 +2,23 @@
   "extends": "./node_modules/@mendix/pluggable-widgets-tools/configs/tsconfig.base.json",
   "compilerOptions": {
     "types": [
-      "@engalar/mendix-client",
+      "big.js",
+      "mendix-client",
       "jest",
+      "custom"
+    ],
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@engalar",
+      "./node_modules/@types"
     ],
     "jsx": "react-jsx",
-    "jsxFactory": null
+    "jsxFactory": null,
+    "include": [
+      "./src",
+      "./typings",
+      "node_modules/@mendix/pluggable-widgets-tools/typings",
+      "node_modules/cypress-image-diff-js/types"
+    ],
   }
 }
