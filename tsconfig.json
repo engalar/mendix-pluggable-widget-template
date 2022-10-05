@@ -14,11 +14,11 @@
     ],
     "jsx": "react-jsx",
     "jsxFactory": null,
-    "include": [
-      "./src",
-      "./typings",
-      "node_modules/@mendix/pluggable-widgets-tools/typings",
-      "node_modules/cypress-image-diff-js/types"
-    ],
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -22,6 +22,7 @@
     "openTestProject": "start tests/testProject/testProject.mpr",
     "backupTestProject": "cmd /c (if not exist dummy\\deployment\\data\\database\\hsqldb\\default (mkdir dummy\\deployment\\data\\database\\hsqldb\\default) else (echo skip 1)) && (if not exist dummy\\widgets (mkdir dummy\\widgets) else (echo skip 2)) && copy tests\\testProject\\testProject.mpr dummy\\ /Y && copy tests\\testProject\\deployment\\data\\database\\hsqldb\\default\\default.script dummy\\deployment\\data\\database\\hsqldb\\default\\",
     "restoreTestProject": "shx cp -r dummy/* tests/testProject/",
+    "test:e2e": "cypress run",
     "test": "pluggable-widgets-tools test:unit:web"
   },
   "copyright": "2020 Mendix Technology BV",
