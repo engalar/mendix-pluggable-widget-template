@@ -14,6 +14,7 @@
     "r": "node ./script/rename.js",
     "start": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
+    "format": "pluggable-widgets-tools format",
     "lint": "pluggable-widgets-tools lint",
     "lint:fix": "pluggable-widgets-tools lint:fix",
     "prerelease": "npm run lint",

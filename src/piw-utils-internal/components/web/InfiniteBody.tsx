@@ -1,12 +1,4 @@
-import {
-    ReactElement,
-    useCallback,
-    useState,
-    useRef,
-    useLayoutEffect,
-    PropsWithChildren,
-    CSSProperties
-} from "react";
+import { ReactElement, useCallback, useState, useRef, useLayoutEffect, PropsWithChildren, CSSProperties } from "react";
 import classNames from "classnames";
 
 interface InfiniteBodyProps {
