@@ -38,6 +38,11 @@ jobs:
                   npm ci
               env:
                   NODE_OPTIONS: --max_old_space_size=4096
+            - name: unit testing
+              run: |
+                  npm test
+              env:
+                  NODE_OPTIONS: --max_old_space_size=4096
             - name: npm run release
               run: |
                   git clone https://github.com/engalar/mendix-testproject-960.git --depth=1 ./tests/testProject

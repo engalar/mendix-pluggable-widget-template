@@ -1,7 +1,7 @@
 {
   "name": "graph",
   "widgetName": "Graph",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "My widget description",
   "packagePath": "mendixcn",
   "author": "wengao.liu@siemens.com",
@@ -20,11 +20,12 @@
     "release": "pluggable-widgets-tools release:web",
     "openTestProject": "start tests/testProject/testProject.mpr",
     "backupTestProject": "cmd /c (if not exist dummy\\deployment\\data\\database\\hsqldb\\default (mkdir dummy\\deployment\\data\\database\\hsqldb\\default) else (echo skip 1)) && (if not exist dummy\\widgets (mkdir dummy\\widgets) else (echo skip 2)) && copy tests\\testProject\\testProject.mpr dummy\\ /Y && copy tests\\testProject\\deployment\\data\\database\\hsqldb\\default\\default.script dummy\\deployment\\data\\database\\hsqldb\\default\\",
-    "restoreTestProject": "shx cp -r dummy/* tests/testProject/"
+    "restoreTestProject": "shx cp -r dummy/* tests/testProject/",
+    "test": "pluggable-widgets-tools test:unit:web"
   },
   "copyright": "2020 Mendix Technology BV",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "config": {
     "projectPath": "./tests/testProject/",
@@ -33,19 +34,26 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^9.13.1",
-    "@types/big.js": "^6.0.2",
+    "@testing-library/dom": "^8.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/testing-library__jest-dom": "^5.14.1",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@engalar/mendix-client": "^8.0.2",
+    "@mendix/pluggable-widgets-tools": ">=9.0.0",
+    "@types/big.js": "^6.1.6",
     "@types/classnames": "^2.2.4",
+    "@types/enzyme": "^3.10.12",
     "@types/lodash-es": "^4.17.5",
     "@types/react": "~17.0.1",
     "@types/react-dom": "~17.0.1",
-    "@engalar/mendix-client": "^8.0.2",
-    "eslint-plugin-jest": "^26.5.3",
-    "shx": "^0.3.4",
-    "mime": "^2.6.0",
-    "rollup": "^2.75.2",
-    "prettier": "^2.6.2",
     "eslint": "^8.15.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "mime": "^2.6.0",
+    "prettier": "^2.6.2",
+    "rollup": "^2.75.2",
+    "shx": "^0.3.4",
     "xml2js": "^0.4.23",
     "zlib": "^1.0.5"
   }

@@ -1,4 +1,23 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "files.eol": "\r\n"
+  "files.eol": "\r\n",
+  "gitlens.remotes": [
+    {
+      "domain": "gitee.com",
+      "type": "Custom",
+      "name": "Gitee",
+      "protocol": "https",
+      "urls": {
+        "repository": "https://gitee.com/${repoBase}/${repoPath}",
+        "branches": "https://gitee.com/${repoBase}/${repoPath}/branches",
+        "branch": "https://gitee.com/${repoBase}/${repoPath}/commits/${branch}",
+        "commit": "https://gitee.com/${repoBase}/${repoPath}/commit/${id}",
+        "file": "https://gitee.com/${repoBase}/${repoPath}?path=${file}${line}",
+        "fileInBranch": "https://gitee.com/${repoBase}/${repoPath}/blob/${branch}/${file}${line}",
+        "fileInCommit": "https://gitee.com/${repoBase}/${repoPath}/blob/${id}/${file}${line}",
+        "fileLine": "#L${line}",
+        "fileRange": "#L${start}-L${end}"
+      }
+    }
+  ]
 }
